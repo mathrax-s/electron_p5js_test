@@ -1,5 +1,4 @@
 #はじめに
-
 以前に「<a href = "https://qiita.com/mathrax-s/items/79c1170301a5faa08867">p5jsでデスクトップアプリケーションをつくる（旧）</a>[^1]」という記事を書かせていただいたのですが、久しぶりにやってみると、なんとうまく動かないことがわかりました。すみません。
 
 [^1]: もとのタイトルに「（旧）」はなかったのですが、追加しました。
@@ -108,7 +107,7 @@ const myp5 = new p5(s);
 
 試したけどうまくいかなかったことも書いておきます。これがうまくいくとスッキリする気がします。
 
-こちらに「<strong><a href "https://qiita.com/Quantum/items/4841aa18643b8ef1fc11#preload%E3%82%92%E7%B5%8C%E7%94%B1%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7require%E3%82%92%E6%B8%A1%E3%81%99%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99">preloadを経由することでrequireを渡すことができます</a></strong>」とありました。
+こちらに「<strong><a href="https://qiita.com/Quantum/items/4841aa18643b8ef1fc11#preload%E3%82%92%E7%B5%8C%E7%94%B1%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7require%E3%82%92%E6%B8%A1%E3%81%99%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99">preloadを経由することでrequireを渡すことができます</a></strong>」とありました。
 
 なるほど。「renderer.js」と「preload.js」で、contextBridgeという方法が用意されていて、変数やオブジェクトを行き来させることができるんですね。そこで試してみた案です。
 
