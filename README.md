@@ -1,4 +1,4 @@
-# Electron Fiddleと、p5jsでデスクトップアプリをつくる例（Electron v15）
+# Electron Fiddle+p5jsでデスクトップアプリをつくる例（Electron v15）
 
 v11までは「renderer.js」に、p5jsを使うため <strong>require('p5')</strong> と書けていたのに、v12以降はこれができなくなってしまいました。次の画面が実際のエラーです。
 ![スクリーンショット 2021-11-01 14.51.15.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/668579/e4abe53d-7864-6e1c-c0ca-6b66917a9c49.png)
