@@ -6,9 +6,8 @@ v11までは「renderer.js」に、p5jsを使うため <strong>require('p5')</st
 # 解決する例
 いまのところ解決する方法は、いまいちスッキリしない気がしますが、大きく3つ見つけました。もっといい方法があると思うので、何かわかる方がいらっしゃたらご教授いただけるとありがたいです。先に手軽な方法を2つあげて、3つ目に自分の採用した方法をあげます。4つ目は、試したけどうまくいかなかった方法です。
 
-https://github.com/mathrax-s/electron_p5js_test
 
-## 例1：nodeIntefrationをtrue、contextIsolationをfalseにする
+## sample_1：nodeIntefrationをtrue、contextIsolationをfalseにする
 1つめは、Electron v12以降でも、v11以前のように書いて動作できる方法です。Electronのセキュリティ設定を甘くすることになるので、おすすめではないです。
 
 v12から「nodeIntegration」という設定が、デフォルトで「false」になっていて、同じく「contextIsolation」という設定はデフォルトで「true」になっています。これらはmain.jsの「webPreference」というところで設定できます。
@@ -41,7 +40,7 @@ function createWindow () {
 }
 ~~~
 
-## 例2：preload.jsに全部書く
+## sample_2：preload.jsに全部書く
 2つめは、プログラムを書くファイルを「renderer.js」ではなく、「preload.js」に書く方法です。「preload.js」なら <strong>require('p5')</strong>  が使えるので、ここに全て書くと一応動作できました。しかしセキュリティ的にどうなるのか、よく理解できていないのでわからないのですが、せっかく用意された「renderer.js」の意味がなくなるので、おすすめではないだろうと思います。
 
 ~~~preload.js
@@ -61,7 +60,7 @@ const myp5 = new p5(s);
 ~~~
 
 
-## 例3： require('p5') は使わない　（これを採用）
+## sample_3： require('p5') は使わない　（これを採用）
 3つめは、<strong>require('p5')</strong> は使わず、「p5js」の本体である「p5.js」や「p5.min.js」ファイルを、HTMLから読み込んでおく方法です。こちらは標準的なp5jsの使い方でもあり、Electronのセキュリティ設定もいじらず「renderer.js」に書けるので、今のところこれがよいのかなと思います。ただ、セーブしたりコンパイルするのに、p5js本体を読みこみにいくので、少し処理が遅くなってしまいました。
 
 p5.min.jsをダウンロードして、同じフォルダに入れます。そのあとindex.htmlで「renderer.js」を読み込む前に、＠p5.min.js」を読み込んでおきます。
@@ -87,7 +86,7 @@ const myp5 = new p5(s);
 
 ---
 
-## 例4：うまくいかなかったサンプル
+## sample_4_sippai：うまくいかなかったサンプル
 
 試したけどうまくいかなかったことも書いておきます。これがうまくいくとスッキリする気がします。
 
