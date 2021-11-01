@@ -1,9 +1,8 @@
+# Electron Fiddleと、p5jsでデスクトップアプリをつくる例（Electron v15）
+
 v11までは「renderer.js」に、p5jsを使うため <strong>require('p5')</strong> と書けていたのに、v12以降はこれができなくなってしまいました。次の画面が実際のエラーです。
-![スクリーンショット 2021-09-25 17.00.22.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/668579/3036f1e1-b9a0-e2cc-d69b-da473c481ae0.png)
+![スクリーンショット 2021-11-01 14.51.15.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/668579/e4abe53d-7864-6e1c-c0ca-6b66917a9c49.png)
 
----
-
-# 解決する例
 いまのところ解決する方法は、いまいちスッキリしない気がしますが、大きく3つ見つけました。もっといい方法があると思うので、何かわかる方がいらっしゃたらご教授いただけるとありがたいです。先に手軽な方法を2つあげて、3つ目に自分の採用した方法をあげます。4つ目は、試したけどうまくいかなかった方法です。
 
 
